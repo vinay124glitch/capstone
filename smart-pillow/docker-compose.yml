@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  smart-pillow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: smart_pillow_app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - ALLOWED_ORIGINS=*
+      - ML_MODEL_PATH=app/ml/position_model.pkl
+    volumes:
+      - pillow-data:/app/backend/smart_pillow.db
+
+volumes:
+  pillow-data:

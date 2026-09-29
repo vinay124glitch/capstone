@@ -1,0 +1,16 @@
+{
+  "short_name": "SmartPillow",
+  "name": "Smart Pillow — Sleep & Brainwave Monitor",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512 192x192 64x64 32x32"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "display": "standalone",
+  "orientation": "portrait"
+}
