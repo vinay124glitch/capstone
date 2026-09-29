@@ -26,7 +26,7 @@ COPY backend/ ./backend/
 
 # Copy training data & train ML model if not present
 COPY data/ ./data/
-RUN python backend/app/ml/train_position_model.py
+RUN python -c "import os; os.system('python backend/app/ml/train_position_model.py') if not os.path.exists('backend/app/ml/position_model.pkl') else print('ML Model already present')"
 
 # Copy built frontend assets from stage 1
 COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
